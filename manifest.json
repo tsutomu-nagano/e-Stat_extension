@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "e-Stat Extension",
+  "version": "0.1.0",
+  "description": "e-Statを少し便利にするブラウザ拡張機能",
+  "permissions": [
+    "contextMenus",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.e-Stat.go.jp/*"],
+      "js": ["src/content.js"],
+       "css": ["src/style.css"]
+    }
+  ]
+}
